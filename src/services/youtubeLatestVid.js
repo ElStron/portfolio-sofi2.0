@@ -19,7 +19,7 @@ export const fetchYouTubeVideos = async (channelId) => {
       //throw new Error("No videos found in the feed.");
     }
   } catch (error) {
-    console.error("Error fetching videos:", error);
+    console.log("Error fetching videos:", error);
     //throw error;
   }
 };
