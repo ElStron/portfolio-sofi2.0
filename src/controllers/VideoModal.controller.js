@@ -35,7 +35,7 @@ export const loadVideo = async (iframe) => {
     const videoData = await fetchYouTubeVideos(channelId);
     initializeModal(iframe, videoData);
   } catch (error) {
-    console.error("Error loading video:", error);
+    console.log("Error loading video:", error);
   }
 };
 

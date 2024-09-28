@@ -8,7 +8,6 @@ import DividerTop from "@src/components/atoms/DividerTop/DividerTop.astro";
 import Skills from "@src/components/organisms/Skills/Skills.astro";
 import Portfolio from "@src/components/organisms/Portfolio/Portfolio.astro";
 import Social from "@src/components/organisms/Social/Social.astro";
-export const prerender = true;
 import { getData } from "@src/services/data"
 const { user, skills, tools, socialIcons } = await getData();
 
@@ -17,7 +16,7 @@ const { user, skills, tools, socialIcons } = await getData();
 ---
 
 <Layout>
-  <BackgroundGradient >
+   <BackgroundGradient >
     <Hero data={user} socialIcons={socialIcons}/>
   </BackgroundGradient>
   <DividerTop/>
@@ -28,5 +27,4 @@ const { user, skills, tools, socialIcons } = await getData();
   <Portfolio/>
   <DividerBottom fill="shape-fill-3"/>
   <Social />
-
 </Layout>
