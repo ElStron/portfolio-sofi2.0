@@ -11,18 +11,18 @@ interface ISendEmail {
 
 async function sendEmail(props: ISendEmail) {
   let transporter = nodemailer.createTransport({
-    host: EMAIL_HOST,
-    port: EMAIL_PORT,
+    host:'sandbox.smtp.mailtrap.io',
+    port: 2525,
     secure: true,
     auth: {
-      user: EMAIL,
-      pass: EMAIL_PASS,
+      user: 'a1b0db49edc19f',
+      pass: '07e03844ec1089',
     },
   });
 
   let message = {
-    from: process.env.EMAIL,
-    to: "luisstron45@gmail.com",
+    from: props.email,
+    to: 'luisstron45@gmail.com',
     subject: props.subject,
     html: `
       <section style="padding: 1rem; height: 100%; width: 100%; font-family: Arial, sans-serif;">
