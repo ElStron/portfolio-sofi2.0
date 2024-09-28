@@ -13,7 +13,6 @@ async function sendEmail(props: ISendEmail) {
   let transporter = nodemailer.createTransport({
     host:'sandbox.smtp.mailtrap.io',
     port: 2525,
-    secure: true,
     auth: {
       user: 'a1b0db49edc19f',
       pass: '07e03844ec1089',
