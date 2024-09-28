@@ -11,7 +11,9 @@ const url = import.meta.env.SITE_URL ?  import.meta.env.SITE_URL : localUrl;
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
-export async function getData(dataType: string = "data") {
+export async function getData(dataType: string = "data", site = null) {
+ 
+    const site_url = site ? site : url 
     // Si el valor de 'dataType' no es "data", lo usamos como endpoint; de lo contrario, el endpoint será "all".
     // Esto decide a qué parte de la API llamar.
     const endpoint = dataType !== "data" ? dataType : "all";
@@ -19,7 +21,7 @@ export async function getData(dataType: string = "data") {
     try {
         // Hacemos una solicitud a la API usando la función 'fetch'.
         // Se construye la URL con el valor de 'url' y el endpoint.
-        const res = await fetch(`${url}/api/${endpoint}`);
+        const res = await fetch(`${site_url}/api/${endpoint}`);
 
         // Verificamos si la respuesta es exitosa antes de convertirla en JSON.
         if (!res.ok) {
