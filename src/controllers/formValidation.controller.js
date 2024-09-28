@@ -39,7 +39,7 @@ export const formValidation = () => {
     }
 
     // Evento que captura el envío del formulario
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("click", (e) => {
       e.preventDefault(); // Prevenimos el comportamiento por defecto (recargar la página)
       handleSubmit(form); // Llamamos a la función de envío del formulario
     });
