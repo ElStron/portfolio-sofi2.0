@@ -3,7 +3,7 @@
 // Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
  import { SITE_URL} from 'astro:env/client';
  const localUrl = "http://localhost:4322" ;
-const url = localUrl ?  localUrl : SITE_URL;
+const url = SITE_URL ?  localUrl : localUrl;
 
 // const url = "https://itssofi.dev/";
 
