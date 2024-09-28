@@ -1,5 +1,6 @@
 import { getData } from "@src/services/data"
-const {skills} = await getData();
+import { SITE_URL} from 'astro:env/client';
+const {skills} = await getData("skills", SITE_URL );
 
 // import { skillsData } from "@data/skillsData.js";
 
