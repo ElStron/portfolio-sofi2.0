@@ -21,8 +21,8 @@ async function sendEmail(props: ISendEmail) {
   });
 
   let message = {
-    from: "luisstron45@gmail.com",
-    to: EMAIL,
+    from: props.email,
+    to: "luisstron45@gmail.com",
     subject: props.subject,
     html: `
       <section style="padding: 1rem; height: 100%; width: 100%; font-family: Arial, sans-serif;">
