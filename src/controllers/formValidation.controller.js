@@ -6,7 +6,7 @@ let errorMsg = "debes completar todos los campos 🙄"; // Mensaje de error
 let alertMsg = "No cumple con el formato requerido 🤔"; // Mensaje de alerta
 // Función principal que valida el formulario
 export const formValidation = () => {
-  document.addEventListener("DOMContentLoaded", () => {
+  
     const form = document.querySelector("form"); // Seleccionamos el formulario en la página
 
     // Función asincrónica que maneja el envío del formulario
@@ -96,5 +96,5 @@ export const formValidation = () => {
       // Añadimos un evento que valida el campo cuando el usuario deja de enfocarlo (blur)
       inputElement.addEventListener("blur", () => validateField(field));
     });
-  });
+
 }
