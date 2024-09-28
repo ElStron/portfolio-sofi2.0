@@ -3,15 +3,15 @@
 // Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
  import { SITE_URL} from 'astro:env/client';
  const localUrl = "http://localhost:4322" ;
-const url = import.meta.env.SITE_URL ?  import.meta.env.SITE_URL : localUrl;
-
+ const url = SITE_URL ?  SITE_URL : localUrl;
+ 
 // const url = "https://itssofi.dev/";
 
 
 
 // Creamos una función asíncrona que toma un argumento opcional 'dataType'.
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
-export async function getData(dataType: string = "data", site = null) {
+export async function getData(dataType: string = "data", site = undefined) {
  
     const site_url = site ? site : url 
     // Si el valor de 'dataType' no es "data", lo usamos como endpoint; de lo contrario, el endpoint será "all".
