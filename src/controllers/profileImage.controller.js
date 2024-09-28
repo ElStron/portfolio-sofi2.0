@@ -1,6 +1,7 @@
 // import { userData as data } from "@src/data/userData";
 import { getData } from "@src/services/data"
-const {user} = await getData();
+import { SITE_URL} from 'astro:env/client';
+const {user} = await getData("user", SITE_URL);
 
 
 export const profilePicture = document.getElementById("profile-picture");
