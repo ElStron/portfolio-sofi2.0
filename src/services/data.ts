@@ -34,7 +34,7 @@ export async function getData(dataType: string = "data", site = undefined) {
         // Devolvemos los datos que corresponden al tipo de datos solicitado ('dataType').
         return data[dataType];
     } catch (error) {
-        console.error(`Failed to fetch ${dataType} from ${url}:`, error);
+        console.error(`Failed to fetch ${dataType} from ${site_url}:`, error);
         return null;
     }
 }
