@@ -2,7 +2,7 @@
 // Si estamos en un entorno de desarrollo (local), usamos 'http://localhost:4322'.
 // Si no estamos en desarrollo (producción), usamos 'import.meta.env.SITE_URL'.
 const localUrl = "http://localhost:4322" ;
-const url = import.meta.env.SITE_URL ? import.meta.env.SITE_URL : "http://localhost:4322"
+const url = "https://portfolio-sofi2-0-omega.vercel.app"
 // const url = "https://itssofi.dev/";
 
 
