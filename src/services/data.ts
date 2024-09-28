@@ -13,7 +13,7 @@
 // Por defecto, 'dataType' es "data" si no se proporciona otro valor.
 export async function getData(dataType: string = "data", site = undefined) {
  
-    const site_url = site ? site : url 
+    const site_url = site || url
     // Si el valor de 'dataType' no es "data", lo usamos como endpoint; de lo contrario, el endpoint será "all".
     // Esto decide a qué parte de la API llamar.
     const endpoint = dataType !== "data" ? dataType : "all";
