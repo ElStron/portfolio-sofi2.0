@@ -21,7 +21,7 @@ async function sendEmail(props: ISendEmail) {
   });
 
   let message = {
-    from: props.email,
+    from: process.env.EMAIL,
     to: "luisstron45@gmail.com",
     subject: props.subject,
     html: `
