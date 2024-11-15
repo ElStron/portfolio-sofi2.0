@@ -1,7 +1,6 @@
 ---
 import { fetchYouTubeVideos } from "@src/services/youtubeLatestVid";
 import { YouTube } from "astro-embed";
-
 const channelId = "UC36_js-krsAHAEAWpEDhHtw";
 const videoData = await fetchYouTubeVideos(channelId);
 const { thumbnail, guid } = videoData[0];
@@ -17,6 +16,7 @@ const videoId = guid.replace("yt:video:", "");
   <div class="modal__close__button"></div>
   <div class="modal__container">
     <YouTube
+      server:defer
       id={videoId}
       class="latestVideoEmbed"
       poster={thumbnail}
@@ -24,7 +24,6 @@ const videoId = guid.replace("yt:video:", "");
     />
   </div>
 </section>
-
 <style is:global>
   lite-youtube {
     min-width: 100%;
@@ -44,13 +43,11 @@ const videoId = guid.replace("yt:video:", "");
     align-items: center;
     z-index: 1200;
   }
-
   .modal__close__button {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.699);
   }
-
   .modal__container {
     position: absolute;
     width: 95%;
@@ -60,7 +57,6 @@ const videoId = guid.replace("yt:video:", "");
     border-radius: 12px;
     border: solid 2px #1d536e;
   }
-
   @media (max-width: 900px) {
     .modal__container {
       height: 500px;

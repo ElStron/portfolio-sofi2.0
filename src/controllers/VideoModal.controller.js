@@ -10,7 +10,6 @@ const initializeModal = (iframe) => {
   // inserta el link dentro del apartado si existe el poster dentro del componente <Youtube/>
   // que esta dentro de YotubeModal.astro
   poster ? videoThumbnail.style.backgroundImage = `url(${poster})` : "url('/img/portadaLIVE.png')";
-
   const dialog = document.querySelector(".youtube__modal__box");
 
   btnOpenModal.addEventListener("click", () => {
@@ -18,7 +17,7 @@ const initializeModal = (iframe) => {
   });
 
   closeModalBtn.addEventListener("click", () => {
-    dialog.style.display = "none";  
+    dialog.style.display = "none";
     const Video = document.querySelector(".latestVideoEmbed iframe");
     // pause el video si se esta reproduciendo después de cerrar la modal
     Video.src = Video.src.split("?")[0];
@@ -28,4 +27,3 @@ const initializeModal = (iframe) => {
 export const loadVideo = () => {
   iframe ? initializeModal(iframe) : null
 };
-
